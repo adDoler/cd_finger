@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Otpechatok</title>
+</head>
+<body>
+    <script>
+        const fpPromise = import('https://openfpcdn.io/fingerprintjs/v4')
+          .then(FingerprintJS => FingerprintJS.load())
+    
+        fpPromise
+          .then(fp => fp.get())
+          .then(result => {
+            console.log(JSON.stringify(result, null, 2))
+        })
+    </script>
+</body>
+</html>
